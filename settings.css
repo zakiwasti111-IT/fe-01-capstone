@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Color Palette */
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --input-border: #334155;
+  --input-focus: #6366f1;
+  --input-focus-glow: rgba(99, 102, 241, 0.25);
+  
+  --error-color: #f87171;
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: #ef4444;
+  
+  --success-color: #34d399;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: #10b981;
+  
+  --btn-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --btn-hover-gradient: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --shadow-main: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.1);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.settings-container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-main);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.required-star {
+  color: var(--error-color);
+  margin-left: 2px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 4px var(--input-focus-glow);
+}
+
+.password-input {
+  padding-right: 2.75rem;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.toggle-password-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Validation states */
+.form-group.has-error .form-input {
+  border-color: var(--error-border);
+  background-color: var(--error-bg);
+}
+
+.form-group.has-error .form-input:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.25);
+}
+
+.error-message {
+  font-size: 0.8125rem;
+  color: var(--error-color);
+  min-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: var(--transition);
+}
+
+.form-group.has-error .error-message {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  margin-top: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--btn-gradient);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+  transition: var(--transition);
+}
+
+.submit-btn:hover {
+  background: var(--btn-hover-gradient);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.5);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.form-status {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-color);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Accessibility focus indicator */
+.submit-btn:focus-visible,
+.toggle-password-btn:focus-visible {
+  outline: 2px solid var(--input-focus);
+  outline-offset: 2px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Account Settings form with client-side inline validation.">
+  <title>Account Settings - User Profile</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main class="settings-container">
+    <header class="header">
+      <h1>Account Settings</h1>
+      <p>Update your personal information and account preferences</p>
+    </header>
+
+    <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+    <form id="settingsForm" class="settings-form" novalidate>
+      <!-- Name Field -->
+      <div class="form-group" id="nameGroup">
+        <label for="name">
+          Full Name <span class="required-star" aria-hidden="true">*</span>
+        </label>
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form-input" 
+            placeholder="John Doe" 
+            autocomplete="name"
+            aria-required="true"
+            aria-describedby="nameError"
+          >
+        </div>
+        <span class="error-message" id="nameError" aria-live="polite"></span>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group" id="emailGroup">
+        <label for="email">
+          Email Address <span class="required-star" aria-hidden="true">*</span>
+        </label>
+        <div class="input-wrapper">
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="john@example.com" 
+            autocomplete="email"
+            aria-required="true"
+            aria-describedby="emailError"
+          >
+        </div>
+        <span class="error-message" id="emailError" aria-live="polite"></span>
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group" id="passwordGroup">
+        <label for="password">
+          Password <span class="required-star" aria-hidden="true">*</span>
+        </label>
+        <div class="input-wrapper">
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-input password-input" 
+            placeholder="At least 8 characters" 
+            autocomplete="new-password"
+            aria-required="true"
+            aria-describedby="passwordError"
+          >
+          <button type="button" id="togglePassword" class="toggle-password-btn" aria-label="Show password" title="Toggle password visibility">
+            👁️
+          </button>
+        </div>
+        <span class="error-message" id="passwordError" aria-live="polite"></span>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBtn" class="submit-btn">
+        Save Settings
+      </button>
+    </form>
+  </main>
+
+  <script type="module" src="settings.js"></script>
+</body>
+</html>

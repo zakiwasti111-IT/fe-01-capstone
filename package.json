@@ -1,0 +1,10 @@
+{
+  "name": "fe-01-capstone",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Frontend Capstone - Settings Form with Validation",
+  "scripts": {
+    "test": "node settings.test.js"
+  },
+  "license": "MIT"
+}
