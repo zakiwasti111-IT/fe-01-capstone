@@ -109,6 +109,7 @@ if (Object.keys(formErrors).length === 0) {
 } else {
   setSuccessMessage('');
 }
+};
 
   return (
     <div className="settings-container">
