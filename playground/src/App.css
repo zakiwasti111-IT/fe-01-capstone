@@ -1,0 +1,84 @@
+.page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+section {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.tablist {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tab {
+  padding: 8px 12px;
+  border: 1px solid #aaa;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.tabActive {
+  border-color: #000;
+  font-weight: 700;
+}
+
+.tabpanel {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.dialog {
+  width: min(560px, 100%);
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  outline: none;
+}
+
+.dialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dialogBody {
+  margin-top: 12px;
+}
+
+.dialogFooter {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.disclosureButton {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background: #fff;
+}
+
+.disclosurePanel {
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 3px solid #333;
+}
