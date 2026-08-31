@@ -84,10 +84,14 @@ Tone: ${input.tone}
 
     const out = ResponseSchema.parse({ bio: bioParsed.data.bio, source: "ai" });
     return NextResponse.json(out);
-  } catch {
-    return NextResponse.json(
-      { error: "Invalid request or generation failed." },
-      { status: 400 }
-    );
-  }
+} catch (error) {
+  console.error("GENERATE BIO ERROR:", error);
+
+  return NextResponse.json(
+    {
+      error: error instanceof Error ? error.message : String(error),
+    },
+    { status: 500 }
+  );
+}
 }
