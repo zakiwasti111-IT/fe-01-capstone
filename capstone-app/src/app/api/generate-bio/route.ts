@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
     // You can use "gemini-1.5-flash" for cheaper/faster, or a newer model if available on your account.
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
 Return ONLY valid JSON with EXACTLY this shape:
