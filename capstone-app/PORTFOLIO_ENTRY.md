@@ -14,13 +14,13 @@ AI Profile Builder is a production-ready Next.js application that helps users cr
 
 ## Testing evidence
 
-![Testing evidence](./screenshots/testing.png)
+![Testing evidence](screenshots/testing.png)
 
 The application was tested for form rendering, validation behavior, required-field handling, AI button disabled state, valid form submission, and successful bio generation.
 
 ## Lighthouse + a11y audit evidence + the one fix you made
 
-![Lighthouse and accessibility audit](./screenshots/lighthouse.png)
+![Lighthouse and accessibility audit](screenshots/lighthouse.png)
 
 One accessibility improvement made was ensuring that the form controls have associated `<label>` elements and appropriate ARIA attributes such as `aria-describedby` for accessible status and help messaging. The AI generation button also uses the native `disabled` attribute while generation is in progress or when required fields are incomplete.
 
